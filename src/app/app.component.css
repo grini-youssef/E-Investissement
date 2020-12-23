@@ -1,7 +1,7 @@
 nav {
   background-color: white;
   height: 80px;
-  box-shadow: 0 1px 1px rgb(231, 231, 233);
+  box-shadow: 0 2px 2px rgb(231, 231, 233);
 }
 .nav-link {
   font-size: 14px;
@@ -15,7 +15,11 @@ nav {
   position: fixed;
   float: left;
   padding-top: 11px;
-  padding-left: 60px;
+  padding-left: 50px;
+}
+img {
+  width: 240px;
+  height: 60px;
 }
 .sign {
   position: static;
@@ -60,12 +64,102 @@ nav {
   opacity: 1;
   bottom: -16px;
 }
-.nav-indicator {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 5px;
-  transition: 0.4s;
-  z-index: 1;
-  border-radius: 8px 8px 0 0;
+
+/* set up button */
+.navbtn,
+.login {
+  display: none;
+}
+
+/* cutom navbar for small device */
+@media (max-width: 992px) {
+  .nav,
+  .sign {
+    display: none;
+  }
+  .navbtn {
+    float: right;
+    display: block;
+    border: 2px solid #2a9134;
+    padding: 3px;
+    background-color: white;
+    margin-top: 20px;
+    margin-right: 35px;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 23px;
+    height: 3px;
+    margin: 5px;
+    background: #2a9134;
+    transition: all 0.5s ease;
+  }
+  .change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    transform: rotate(45deg) translate(-5px, -8px);
+  }
+  /* quand click sur le bouton du menu */
+  .nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    margin-top: 84px;
+    right: 100%;
+    text-align: center;
+    transition: all 0.4s;
+    z-index: 100;
+  }
+  .menu-clicked {
+    right: 0;
+  }
+  ul li {
+    margin-right: 0 !important;
+    margin-bottom: 24px;
+  }
+  .nav-link {
+    font-size: 16px;
+    color: black;
+  }
+  .is-active .nav-link {
+    color: #4ebaec;
+    background-color: #dfe2ea;
+  }
+  .nav-item:after,
+  .nav-item:hover:after,
+  .is-active:after {
+    opacity: 1;
+    bottom: -16px;
+    height: 1px;
+    background-color: #dfe2ea;
+  }
+  .login {
+    display: block;
+  }
+
+  /* set view for device have < 400 px */
+  @media (max-width: 400px) {
+    .logo {
+      padding-top: 11px;
+      padding-left: 15px;
+    }
+    img {
+      width: 200px;
+      height: 50px;
+    }
+    nav {
+      height: 67px;
+    }
+    .navbtn {
+      margin-top: 14px;
+      margin-right: 25px;
+    }
+  }
 }

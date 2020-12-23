@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,20 @@ export class AppComponent {
     var items = document.querySelectorAll('.nav-item');
     items.forEach(function (item, index) {
       item.addEventListener('click', function (e) {
-        console.log("grini test");
         var indicator = <HTMLElement> document.querySelector('.is-active');
         indicator.classList.remove('is-active');
         item.classList.add('is-active');
+        $(".navbtn").removeClass("change");
+        $(".nav").removeClass("menu-clicked");
+
       });
     });
+
+    $(".navbtn").click(function() {
+      $(".navbtn").toggleClass("change");
+      $(".nav").toggleClass("menu-clicked");
+    });
+
   }
 
 }
