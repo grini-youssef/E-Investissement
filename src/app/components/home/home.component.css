@@ -1,0 +1,51 @@
+.carousel-caption {
+  display: block;
+  position: absolute;
+  left: 13%;
+  top: 90px;
+  z-index: 10;
+  padding: 0;
+  color: #fff;
+  text-align: left;
+}
+h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+p {
+  width: 55%;
+  font-family: "Cascadia Code";
+  line-height: 30px;
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 300;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .carousel-caption {
+    top: 65px;
+  }
+  img {
+    height: 400px !important;
+  }
+  p {
+    width: 90%;
+  }
+
+  @media (max-width: 424px) {
+    .carousel-caption {
+      top: 40px;
+    }
+    p {
+      text-align: left;
+      width: 100%;
+    }
+    @media (max-width: 350px) {
+      img {
+        height: 465px !important;
+      }
+    }
+  }
+}

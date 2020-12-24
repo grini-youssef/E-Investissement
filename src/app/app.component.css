@@ -12,7 +12,7 @@ nav {
 }
 .logo {
   text-decoration: none;
-  position: fixed;
+  position: absolute;
   float: left;
   padding-top: 11px;
   padding-left: 50px;
@@ -107,7 +107,7 @@ img {
   /* quand click sur le bouton du menu */
   .nav {
     display: block;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100vh;
     background: #ffffff;
@@ -156,6 +156,9 @@ img {
     }
     nav {
       height: 67px;
+    }
+    .nav {
+      margin-top: 70px;
     }
     .navbtn {
       margin-top: 14px;
