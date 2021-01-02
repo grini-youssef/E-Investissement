@@ -7,6 +7,12 @@ import { HomeComponent } from './components/home/home.component';
 import { InvestirComponent } from './components/investir/investir.component';
 import { ProjetsExistentComponent } from './components/projets-existent/projets-existent.component';
 import { StatistiqueComponent } from './components/statistique/statistique.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -14,11 +20,17 @@ import { StatistiqueComponent } from './components/statistique/statistique.compo
     HomeComponent,
     InvestirComponent,
     ProjetsExistentComponent,
-    StatistiqueComponent
+    StatistiqueComponent,
+    HeaderComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxWebstorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
