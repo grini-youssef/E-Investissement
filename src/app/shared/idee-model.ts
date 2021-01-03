@@ -9,6 +9,7 @@ export class IdeeModel {
    secteur: string;
    textDescriptif: string;
    titre: string;
+   phone: string;
    userName: string;
    voteCount:number;
    

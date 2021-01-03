@@ -1,0 +1,34 @@
+<!-- Display Posts-->
+<div class="row post" *ngFor="let idee of idees$">
+
+  <app-vote-button class="vote mx-2 my-auto" [post]="idee"></app-vote-button>
+
+  <!-- Section to Display Post Information-->
+  <div class="col-md-11">
+      <span>
+        <span class="post-title"> {{idee.titre}} </span>
+        <span class="ml-4">.posted by <a class="username" routerLink="/user/{{idee.userName}}">{{idee.userName}}</a></span>
+        <span> . {{idee.duration}}</span>
+      </span>
+
+      <hr />
+      <h6><span class="secteur">Secteur : </span> <span>{{idee.secteur}}</span></h6>
+      <h6><span class="commune">Commune : </span> <span>{{idee.commune}}</span></h6>
+
+      <p class="post-text" [innerHtml]="idee.textDescriptif"></p>
+      <br>
+      <h6><span class="budjet">Estimated budget : </span> <span>{{idee.budget | currency:'MAD'}}</span></h6>
+      <h6><span class="phone">Contact owner : </span> <span>{{idee.phone}}</span></h6>
+      <hr />
+      <span>
+        <a class="btnCommments" role="button">
+          <fa-icon [icon]="faComments"></fa-icon>
+          Comments({{idee.commentCount}})
+        </a>
+        <button class="login" (click)="goToPost(idee.ideeId)">
+          Read Post
+        </button>
+      </span>
+  </div>
+
+</div>

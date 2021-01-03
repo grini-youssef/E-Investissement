@@ -16,6 +16,10 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptor } from './token-interceptor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PostTileComponent } from './shared/post-tile/post-tile.component';
+import { VoteButtonComponent } from './shared/vote-button/vote-button.component';
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
 
 
 @NgModule({
@@ -27,7 +31,10 @@ import { TokenInterceptor } from './token-interceptor';
     StatistiqueComponent,
     HeaderComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    PostTileComponent,
+    VoteButtonComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,8 @@ import { TokenInterceptor } from './token-interceptor';
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [
     {
