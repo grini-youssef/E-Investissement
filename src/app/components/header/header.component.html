@@ -1,48 +1,66 @@
 <nav id="mynav">
-   <div>
- 
-     <a class="logo" href="#">
-       <img src="./assets/img/logo4.png" alt="">
-     </a>
- 
-     <!-- button for small device -->
-     <button class="navbtn" type="button" data-toggle="" data-target="#">
-       <div class="bar1"></div>
-       <div class="bar2"></div>
-       <div class="bar3"></div>
-     </button>
- 
-     <ul class="nav nav-pills justify-content-center pt-3">
-       <li class="nav-item is-active mr-3">
-         <a class="nav-link" routerLink="/">Home</a>
-       </li>
-       <li class="nav-item mr-3">
-         <a class="nav-link" routerLink="investir">Investir</a>
-       </li>
-       <li class="nav-item mr-3">
-         <a class="nav-link" routerLink="projetsExistant">Projet Existant</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" routerLink="statistique">Statistique</a>
-       </li>
- 
-       <li class="nav-item login">
-         <a class="nav-link" routerLink="login">Se connecter</a>
-       </li>
-       <li class="nav-item login">
-         <a class="nav-link" routerLink="sign-up">S'inscrire</a>
-       </li>
- 
-     </ul>
- 
-     <div class="sign">
-       <a routerLink="login">
-         <button class="btn btn-outline-info mr-2">Login</button>
-       </a>
-       <a routerLink="sign-up">
-         <button class="btn btn-info">Sign up</button>
-       </a>
-     </div>
- 
-   </div>
- </nav>
+  <div>
+
+    <a class="logo" href="#">
+      <img src="./assets/img/logo4.png" alt="">
+    </a>
+
+    <!-- button for small device -->
+    <button class="navbtn" type="button" data-toggle="" data-target="#">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </button>
+
+    <ul class="nav nav-pills justify-content-center pt-3">
+      <li class="nav-item is-active mr-3">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item mr-3">
+        <a class="nav-link" routerLink="investir">Investir</a>
+      </li>
+      <li class="nav-item mr-3">
+        <a class="nav-link" routerLink="projetsExistant">Projet Existant</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="statistique">Statistique</a>
+      </li>
+
+      <li class="nav-item login">
+        <a class="nav-link" routerLink="/login">Se connecter</a>
+      </li>
+      <li class="nav-item login">
+        <a class="nav-link" routerLink="/sign-up">S'inscrire</a>
+      </li>
+
+    </ul>
+
+
+    <div *ngIf="!isLoggedIn" class="sign">
+      <a routerLink="/login">
+        <button class="btn btn-outline-info mr-2">Login</button>
+      </a>
+      <a routerLink="/sign-up">
+        <button class="btn btn-info">Sign up</button>
+      </a>
+    </div>
+
+
+    <div class="sign">
+      <div *ngIf="isLoggedIn" ngbDropdown>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button (click)="goToUserProfile()" ngbDropdownItem>Profile</button>
+          <button (click)="logout()" ngbDropdownItem>Logout</button>
+        </div>
+        <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
+          <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
+          {{username}}
+        </button>
+      </div>      
+    </div>
+
+
+
+
+  </div>
+</nav>

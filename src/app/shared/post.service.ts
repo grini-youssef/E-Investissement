@@ -23,4 +23,8 @@ export class PostService {
     return this.http.get<IdeeModel>('http://localhost:8080/api/idees/' + id);
   }
 
+  getAllPostsByUser(name: string): Observable<IdeeModel[]> {
+    return this.http.get<IdeeModel[]>('http://localhost:8080/api/idees/by-user/' + name);
+  }
+
 }

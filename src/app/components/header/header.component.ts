@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/auth/shared/auth.service';
 declare var $:any;
 
 @Component({
@@ -8,9 +11,19 @@ declare var $:any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  faUser = faUser;
+  isLoggedIn: boolean;
+  username: string;
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
+    this.authService.username.subscribe((data: string) => this.username = data);
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.username = this.authService.getUserName();
+
     var items = document.querySelectorAll('.nav-item');
     items.forEach(function (item, index) {
       item.addEventListener('click', function (e) {
@@ -40,5 +53,18 @@ export class HeaderComponent implements OnInit {
       }
     });
 
-}
+    
+
+    }
+
+    goToUserProfile() {
+      this.router.navigateByUrl('/user-profile/' + this.username);
+    }
+  
+    logout() {
+      this.authService.logout();
+      this.isLoggedIn = false;
+      this.router.navigateByUrl('');
+    }
+
 }
