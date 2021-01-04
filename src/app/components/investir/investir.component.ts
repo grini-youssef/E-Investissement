@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IdeeModel } from 'src/app/shared/idee-model';
+import { PostService } from 'src/app/shared/post.service';
 
 @Component({
   selector: 'app-investir',
@@ -7,12 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestirComponent implements OnInit {
 
+  posts: Array<IdeeModel> = [];
 
-  constructor() { 
-   
-   }
-
-  ngOnInit(): void {
+  constructor(private postService: PostService, private router: Router) {
+    this.postService.getAllPosts().subscribe(post => {
+      this.posts = post;
+    });
+  
   }
+
+  ngOnInit(): void {    
+  
+
+  }
+
+  
 
 }

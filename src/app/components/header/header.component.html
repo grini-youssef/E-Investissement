@@ -36,16 +36,6 @@
     </ul>
 
 
-    <div *ngIf="!isLoggedIn" class="sign">
-      <a routerLink="/login">
-        <button class="btn btn-outline-info mr-2">Login</button>
-      </a>
-      <a routerLink="/sign-up">
-        <button class="btn btn-info">Sign up</button>
-      </a>
-    </div>
-
-
     <div class="sign">
       <div *ngIf="isLoggedIn" ngbDropdown>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -57,6 +47,15 @@
           {{username}}
         </button>
       </div>      
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="sign">
+      <a routerLink="/login">
+        <button class="btn btn-outline-info mr-2">Login</button>
+      </a>
+      <a routerLink="/sign-up">
+        <button class="btn btn-info">Sign up</button>
+      </a>
     </div>
 
 
