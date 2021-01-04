@@ -7,6 +7,7 @@ import { InvestirComponent } from './components/investir/investir.component';
 import { ProjetsExistentComponent } from './components/projets-existent/projets-existent.component';
 import { StatistiqueComponent } from './components/statistique/statistique.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
+import { ViewPostComponent } from './post/view-post/view-post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create-post', component: CreatePostComponent },
+  { path: 'view-post/:id', component: ViewPostComponent },
 ];
 
 @NgModule({

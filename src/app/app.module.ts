@@ -22,6 +22,7 @@ import { VoteButtonComponent } from './shared/vote-button/vote-button.component'
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { ViewPostComponent } from './post/view-post/view-post.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     PostTileComponent,
     VoteButtonComponent,
     SideBarComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ViewPostComponent
   ],
   imports: [
     BrowserModule,
