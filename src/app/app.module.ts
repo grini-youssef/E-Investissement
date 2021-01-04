@@ -20,6 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostTileComponent } from './shared/post-tile/post-tile.component';
 import { VoteButtonComponent } from './shared/vote-button/vote-button.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { CreatePostComponent } from './post/create-post/create-post.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
     LoginComponent,
     PostTileComponent,
     VoteButtonComponent,
-    SideBarComponent
+    SideBarComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
+    EditorModule,
   ],
   providers: [
     {

@@ -3,6 +3,10 @@ nav {
   height: 80px;
   box-shadow: 0 2px 2px rgb(231, 231, 233);
 }
+/* after scroll  */
+.nav2 {
+  height: 72px;
+}
 .nav-link {
   font-size: 13px;
   text-transform: uppercase;

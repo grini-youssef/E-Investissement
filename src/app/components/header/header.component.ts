@@ -28,5 +28,17 @@ export class HeaderComponent implements OnInit {
       $(".nav").toggleClass("menu-clicked");
     });
 
+    $(window).scroll(function () {
+      let position = $(this).scrollTop();
+  
+      if (position >= 149) {
+        $("#mynav").addClass("nav2");
+        $("#mynav").addClass("fixed-top");
+      } else {
+        $("#mynav").removeClass("nav2");
+        $("#mynav").removeClass("fixed-top");
+      }
+    });
+
 }
 }

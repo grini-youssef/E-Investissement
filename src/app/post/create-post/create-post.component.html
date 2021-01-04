@@ -1,0 +1,41 @@
+<div class="container">
+   <div class="col-md-10 offset-md-1">
+     <hr />
+
+     <div class="create-post-container">
+
+       <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
+         <div class="form-group">
+           <div class="create-post-heading">Create Post</div>
+           <hr />
+
+           <input type="text" [formControlName]="'titre'" class="form-control" style="margin-top: 10px"
+             placeholder="Title">
+ 
+           <select class="form-control" style="margin-top: 20px" [formControlName]="'secteur'">
+             <option value="" selected disabled>Select secteur</option>
+             <option *ngFor="let secteur of secteurs">{{secteur}}</option>
+           </select>
+
+           <select class="form-control" style="margin-top: 20px" [formControlName]="'commune'">
+            <option value="" selected disabled>Select Commune</option>
+            <option *ngFor="let commune of communes">{{commune}}</option>
+          </select>
+
+           <input type="number" class="form-control" [formControlName]="'budget'" style="margin-top: 20px" placeholder="budjet estimable">
+ 
+           <div class="form-group" style="margin-top: 20px">
+            <textarea class="form-control" placeholder="Description the idea" id="" [formControlName]="'textDescriptif'" rows="4"></textarea>
+          </div>
+               
+           <span>
+             <div style="margin-top: 25px" class="float-left mb-3">
+               <button  (click)="discardPost()" class="btnDiscard mr-3">Discard</button>
+               <button class="btnCreatePost">Post</button>
+             </div>
+           </span>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
