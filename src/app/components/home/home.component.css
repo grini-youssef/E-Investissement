@@ -13,7 +13,7 @@ h1 {
   font-size: 30px;
   margin-bottom: 24px;
 }
-p {
+.text_slid {
   width: 55%;
   font-family: "Cascadia Code";
   line-height: 30px;
@@ -48,4 +48,36 @@ p {
       }
     }
   }
+}
+
+.about_title {
+  text-align: center;
+  font-size: 26px;
+  text-decoration: underline 3px solid #2abeeb;
+  text-underline-position: under;
+  font-weight: 700;
+  color: red;
+  font-family: cursive2;
+  margin-top: 35px;
+}
+
+.text_about {
+  font-family: "Cascadia Code";
+  font-size: 19px;
+  font-weight: 100;
+  color: #535e61;
+}
+.image_about {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 2px;
+}
+.review {
+  border: 1px solid rgb(183, 193, 194);
+  border-radius: 4px;
+  background-color: #f5f1e9;
+  margin-bottom: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#about {
 }

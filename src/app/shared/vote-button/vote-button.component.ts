@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/auth/shared/auth.service';
 import { PostService } from '../post.service';
 import { VoteService } from '../vote.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vote-button',
@@ -26,11 +27,11 @@ export class VoteButtonComponent implements OnInit {
 
   constructor(private voteService: VoteService,
     private authService: AuthService,
-    private postService: PostService, private toastr: ToastrService) {
+    private postService: PostService, private toastr: ToastrService, private router: Router) {
 
     this.votePayload = {
       voteType: undefined,
-      postId: undefined
+      ideeId: undefined
     }
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
   }
@@ -52,11 +53,16 @@ export class VoteButtonComponent implements OnInit {
   }
 
   private vote() {
-    this.votePayload.postId = this.post.ideeId;
+    this.votePayload.ideeId = this.post.ideeId;
     this.voteService.vote(this.votePayload).subscribe(() => {
       this.updateVoteDetails();
     }, error => {
-      this.toastr.error(error.error.message);
+      if(error.status==403){
+        this.router.navigateByUrl('/login');
+      }
+      else{
+        this.toastr.error('You have already voted');
+      }
       throwError(error);
     });
   }

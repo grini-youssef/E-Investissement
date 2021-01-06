@@ -5,6 +5,12 @@
   font-weight: 400;
   src: url(assets/fonts/CascadiaCode.ttf);
 }
+@font-face {
+  font-family: "cursive2";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/Courgette-Regular.ttf);
+}
 input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
