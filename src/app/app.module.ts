@@ -26,6 +26,7 @@ import { ViewPostComponent } from './post/view-post/view-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CreatePostComponent,
     ViewPostComponent,
     UserProfileComponent,
-    FooterComponent
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

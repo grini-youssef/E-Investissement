@@ -6,6 +6,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { InvestirComponent } from './components/investir/investir.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProjetsExistentComponent } from './components/projets-existent/projets-existent.component';
 import { StatistiqueComponent } from './components/statistique/statistique.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard] },
   { path: 'view-post/:id', component: ViewPostComponent, canActivate: [AuthGuard]  },
-  { path: 'user-profile/:name', component: UserProfileComponent, canActivate: [AuthGuard] }
+  { path: 'user-profile/:name', component: UserProfileComponent, canActivate: [AuthGuard] },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
