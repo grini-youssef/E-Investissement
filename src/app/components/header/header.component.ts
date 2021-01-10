@@ -26,12 +26,12 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.username = this.authService.getUserName();
 
-    var items = document.querySelectorAll('.nav-item');
+    var items = document.querySelectorAll('.nav-link');
     items.forEach(function (item, index) {
       item.addEventListener('click', function (e) {
-        var indicator = <HTMLElement> document.querySelector('.is-active');
-        indicator.classList.remove('is-active');
-        item.classList.add('is-active');
+        // var indicator = <HTMLElement> document.querySelector('.is-active');
+        // indicator.classList.remove('is-active');
+        // item.classList.add('is-active');
         $(".navbtn").removeClass("change");
         $(".nav").removeClass("menu-clicked");
 

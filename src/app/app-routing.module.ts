@@ -13,7 +13,8 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ViewPostComponent } from './post/view-post/view-post.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo:'/home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
   { path: 'investir', component: InvestirComponent },
   { path: 'projetsExistant', component: ProjetsExistentComponent },
   { path: 'statistique', component: StatistiqueComponent },
