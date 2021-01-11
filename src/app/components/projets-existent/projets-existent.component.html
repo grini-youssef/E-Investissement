@@ -1,7 +1,7 @@
 <div class="jumbotron img-jmbo">
   <div class="container">
-    <h1 class="text-white">Welcome</h1>
-    <p class="text-white">This is my channel ...</p>
+    <h1 class="text-white">Welcome lister les projets</h1>
+    <p class="text-white">lister les projets existants dans la région Al-Hoceima.pour ajouter un projet cliquez ici</p>
     <button routerLink="/create-projet" class="btn btn-primary">Add new Projet</button>
   </div>
 </div>
@@ -15,54 +15,3 @@
 
 
 
-<!--
-<div class="jumbotron img-jmbo">
-  <div class="container">
-    <h1 class="text-white">Welcome</h1>
-    <p class="text-white">This is my channel ...</p>
-    <button routerLink="/create-projet" class="btn btn-primary">Add new Projet</button>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title">
-          <h2>Existing Projects</h2>
-        </div>
-      </div>
-    </div><br>
-
-
-
-    <div  class="flex row justify-content-center">
-      <div *ngFor="let currentProjet of projets" class="col-md-4 d-flex align-items-stretchss" >
-        <div class="card shadow mt-4" style="width: 22rem;">
-          <div class="card-body text-center">
-            <h3 class="title">{{currentProjet.titre}}</h3>
-            <p class="date">{{currentProjet.duration}}</p>
-            <p class="more-btn">
-              {{currentProjet.description}}
-            </p>
-          </div>
-          <div class="card-footer text-muted text-center">
-            Chiffre d'affaire:{{currentProjet.turnover| currency:'MAD'}}
-          </div>
-        </div>
-      </div>
-    </div><br>
-
-    <div *ngIf="projets?.length==0" class="alert alert-warning col-xl-9 mx-auto" role="alert">
-      <div class="cta-inner text-center rounded">
-        <h5 class="text-muted">No Projects Found.</h5>
-        <br>
-        <button routerLink="/home" type="button" class="btn btn-secondary">GO BACK HOME</button>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
--->
