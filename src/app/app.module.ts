@@ -27,6 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CreateProjetComponent } from './post/create-projet/create-projet.component';
+import { PostProjetComponent } from './shared/post-projet/post-projet.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ViewPostComponent,
     UserProfileComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CreateProjetComponent,
+    PostProjetComponent
   ],
   imports: [
     BrowserModule,

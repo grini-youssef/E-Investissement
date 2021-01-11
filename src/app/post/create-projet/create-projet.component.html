@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="col-md-10 offset-md-1">
+    <hr />
+
+    <div class="create-post-container">
+
+      <form class="post-form" [formGroup]="createProjetForm" (ngSubmit)="createProjet()">
+        <div class="form-group">
+          <div class="create-post-heading">Create Projet Existant</div>
+          <hr />
+
+          <input type="text" [formControlName]="'titre'" class="form-control" style="margin-top: 10px"
+                 placeholder="Title">
+
+          <div class="form-group" style="margin-top: 20px">
+            <textarea class="form-control" placeholder="Description the projet" id="" [formControlName]="'description'" rows="4"></textarea>
+          </div>
+
+          <input type="text" [formControlName]="'turnover'" class="form-control" style="margin-top: 10px"
+                 placeholder="Turnover">
+
+          <select class="form-control" style="margin-top: 20px" [formControlName]="'secteur'">
+            <option value="" selected disabled>Select secteur</option>
+            <option *ngFor="let secteur of secteurs">{{secteur}}</option>
+          </select>
+
+          <select class="form-control" style="margin-top: 20px" [formControlName]="'commune'">
+            <option value="" selected disabled>Select Commune</option>
+            <option *ngFor="let commune of communes">{{commune}}</option>
+          </select>
+
+          <input type="text" [formControlName]="'imageUrl'" class="form-control" style="margin-top: 10px"
+                  placeholder="ImageUrl">
+
+
+          <span>
+             <div style="margin-top: 25px" class="float-left mb-3">
+               <button  (click)="discardProjet()" class="btnDiscard mr-3">Discard</button>
+               <button class="btnCreatePost">Post</button>
+             </div>
+           </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

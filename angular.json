@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "E-Investissement"
+    }
+  },
+  "defaultProject": "E-Investissement",
+  "cli": {
+    "analytics": "efc14d6d-c8dc-440b-b5e8-703a06ba8780"
+  }
 }

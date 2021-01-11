@@ -1,28 +1,4 @@
-<div class="jumbotron img-jmbo">
-  <div class="container">
-    <h1 class="text-white">Welcome</h1>
-    <p class="text-white">This is my channel ...</p>
-    <button routerLink="/create-projet" class="btn btn-primary">Add new Projet</button>
-  </div>
-</div>
-<div class="reddit-body">
-  <div class="container">
-    <div class="row">
-        <app-post-projet [projets]="projets"></app-post-projet>
-    </div>
-  </div>
-</div>
 
-
-
-<!--
-<div class="jumbotron img-jmbo">
-  <div class="container">
-    <h1 class="text-white">Welcome</h1>
-    <p class="text-white">This is my channel ...</p>
-    <button routerLink="/create-projet" class="btn btn-primary">Add new Projet</button>
-  </div>
-</div>
 
 <section class="section">
   <div class="container">
@@ -39,6 +15,11 @@
     <div  class="flex row justify-content-center">
       <div *ngFor="let currentProjet of projets" class="col-md-4 d-flex align-items-stretchss" >
         <div class="card shadow mt-4" style="width: 22rem;">
+          <div class="inner">
+            <a routerLink="/projets/{{currentProjet.idProjet}}}">
+              <img class="card-img-top" src="{{currentProjet.imageUrl}}" alt="Card image cap" style="height: 250px">
+            </a>
+          </div>
           <div class="card-body text-center">
             <h3 class="title">{{currentProjet.titre}}</h3>
             <p class="date">{{currentProjet.duration}}</p>
@@ -64,5 +45,3 @@
 
   </div>
 </section>
-
--->

@@ -17,7 +17,7 @@ export class SideBarComponent implements OnInit {
     this.router.navigateByUrl('/create-post');
   }
   postExistingProject() {
-    this.router.navigateByUrl('/postExistingProject');
+    this.router.navigateByUrl('/create-projet');
   }
 
 }
